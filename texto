@@ -1,0 +1,201 @@
+\documentclass[
+  % Opções da classe abntex2
+  sumario=indented, % Sumário recuado (padrão)
+  12pt, % Tamanho da fonte
+  oneside, % Apenas um lado da folha (padrão)
+  a4paper, % Tamanho do papel A4 (padrão)
+  chapter=TITLE, % Capítulos como títulos
+  section=TITLE, % Seções como títulos
+  subsection=TITLE, % Subseções como títulos
+  subsubsection=TITLE, % Sub-subseções como títulos
+  % ABNT NBR 14724:2011 exige que os títulos de capítulos sejam centralizados.
+  % Para isso, pode ser necessário ajustar a configuração de títulos.
+]{abntex2}
+
+% Pacotes essenciais
+\usepackage[utf8]{inputenc} % Codificação UTF-8
+\usepackage[T1]{fontenc} % Fontes modernas
+\usepackage{lmodern} % Fonte Latin Modern
+\usepackage[brazilian]{babel} % Idioma português do Brasil
+
+% Pacotes para formatação e recursos adicionais
+\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção
+\usepackage{float} % Permite controle de posicionamento de figuras e tabelas
+\usepackage{graphicx} % Para inclusão de imagens
+\usepackage{caption} % Para legendas de figuras e tabelas mais customizadas
+\usepackage{subcaption} % Para sub-figuras e sub-tabelas
+\usepackage{amsmath} % Para equações matemáticas
+\usepackage{amsfonts} % Símbolos matemáticos adicionais
+\usepackage{amssymb} % Símbolos matemáticos adicionais
+\usepackage{hyperref} % Para links clicáveis no PDF
+\usepackage{booktabs} % Para tabelas com linhas horizontais mais bonitas
+\usepackage[shortlabels]{enumitem} % Para listas personalizadas
+
+% Configuração de margens (abntex2 já configura por padrão, mas pode ser ajustado)
+% Exemplo: \usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+
+% Informações do documento (substitua com suas informações)
+\author{Seu Nome Completo}
+\title{Título do Seu Trabalho}
+\subtitle{Subtítulo, se houver}
+\instituicao{%
+  \includegraphics[width=4cm]{logo_instituicao.png} % Substitua pelo caminho do seu logo
+  \par Universidade/Faculdade/Instituto \\
+  Nome do Curso
+}
+\orientador{Prof. Dr. Nome do Orientador}
+\email{seu.email@exemplo.com}
+\local{Santos, São Paulo}
+\data{\today} % Data atual
+
+% Configurações ABNT
+\renewcommand{\ABNTEXchapterfont}{\bfseries\Large} % Ajusta fonte de capítulos (ex: negrito e maior)
+\setlength{\parindent}{1.27cm} % Indentação do parágrafo (padrão ABNT 1,25 cm)
+
+% Início do documento
+\begin{document}
+
+% Elementos pré-textuais
+\pretextual
+
+  \maketitle % Gera a capa e folha de rosto
+  \imprimircapa % Imprime a capa
+  \imprimirfolhaderosto % Imprime a folha de rosto
+
+  \begin{dedicatoria}
+    Aos meus pais, pelo apoio incondicional.
+  \end{dedicatoria}
+
+  \begin{agradecimentos}
+    Agradeço aos professores e colegas que contribuíram para este trabalho.
+  \end{agradecimentos}
+
+  \begin{epigrafe}
+    "A educação é a arma mais poderosa que você pode usar para mudar o mundo." \\
+    \vspace{-0.5cm} \hfill -- Nelson Mandela
+  \end{epigrafe}
+
+  \begin{resumo}
+    Este é o resumo do seu trabalho. Ele deve conter uma breve descrição do objetivo, metodologia, resultados e conclusões do seu estudo. Escreva de forma concisa e clara, com no máximo 500 palavras.
+    \newline
+    \textbf{Palavras-chave:} LaTeX, ABNT, Trabalho, Exemplo.
+  \end{resumo}
+
+  \begin{resumo}[english]
+    This is the abstract of your work. It should contain a brief description of the objective, methodology, results, and conclusions of your study. Write concisely and clearly, with a maximum of 500 words.
+    \newline
+    \textbf{Keywords:} LaTeX, ABNT, Work, Example.
+  \end{resumo}
+
+  \imprimirlisatabelas % Imprime a lista de tabelas
+  \imprimirlisagraficos % Imprime a lista de gráficos
+  \imprimirlisasimbolos % Imprime a lista de símbolos (se houver)
+  \imprimirlisaabreviacoes % Imprime a lista de abreviações e siglas (se houver)
+
+  \pdfbookmark[0]{Sumário}{sumario} % Adiciona o sumário ao índice do PDF
+  \tableofcontents % Gera o sumário
+
+\textual
+
+  \chapter{Introdução}
+  \label{sec:introducao}
+  Nesta seção, você apresentará o tema do seu trabalho, a contextualização, o problema de pesquisa, os objetivos (geral e específicos) e a justificativa. Comece com uma introdução geral e vá afunilando para o seu problema.
+
+  \section{Contextualização do Problema}
+  \label{sec:contextualizacao}
+  Apresente o cenário em que seu problema de pesquisa se insere.
+
+  \subsection{Objetivos}
+  \label{sec:objetivos}
+  Aqui você define o que pretende alcançar com o trabalho.
+
+  \subsubsection{Objetivo Geral}
+  O objetivo geral é o resultado mais amplo que você espera alcançar.
+
+  \subsubsection{Objetivos Específicos}
+  Os objetivos específicos são as etapas menores e mais detalhadas que levarão ao objetivo geral.
+
+  \chapter{Revisão Bibliográfica}
+  \label{sec:revisao}
+  Nesta seção, você apresentará as principais teorias, conceitos e estudos relacionados ao seu tema, mostrando o que já foi pesquisado e quais lacunas seu trabalho busca preencher.
+
+  \section{Conceitos Fundamentais}
+  \label{sec:conceitos}
+  Explique os termos e conceitos chave do seu trabalho.
+
+  \section{Estudos Correlatos}
+  \label{sec:estudos}
+  Apresente pesquisas anteriores que se relacionam com o seu tema.
+
+  \chapter{Metodologia}
+  \label{sec:metodologia}
+  Descreva detalhadamente como a pesquisa foi realizada, incluindo o tipo de pesquisa, a abordagem, os participantes (se houver), os instrumentos de coleta de dados e os procedimentos de análise.
+
+  \section{Tipo de Pesquisa}
+  \label{sec:tipo_pesquisa}
+  Descreva se é uma pesquisa exploratória, descritiva, explicativa, etc.
+
+  \section{Instrumentos de Coleta de Dados}
+  \label{sec:instrumentos}
+  Descreva os métodos e ferramentas utilizadas para coletar os dados.
+
+  % --- Inserindo Imagens Manualmente ---
+  \begin{figure}[H] % [H] tenta manter a figura exatamente onde está no código
+    \centering
+    \includegraphics[width=0.8\textwidth]{exemplo_imagem1.png} % Substitua pelo caminho da sua imagem
+    \caption{Legenda da primeira imagem: Esta imagem ilustra um conceito importante.}
+    \label{fig:imagem1}
+  \end{figure}
+
+  \begin{figure}[h!] % [h!] tenta colocar a figura "here" se houver espaço
+    \centering
+    \includegraphics[width=0.6\textwidth]{exemplo_imagem2.jpg} % Substitua pelo caminho da sua imagem
+    \caption{Legenda da segunda imagem: Uma representação visual de dados.}
+    \label{fig:imagem2}
+  \end{figure}
+  % --- Fim da Inserção de Imagens ---
+
+  \chapter{Resultados e Discussão}
+  \label{sec:resultados}
+  Apresente os resultados obtidos na sua pesquisa e discuta-os à luz da revisão bibliográfica. Compare seus achados com os de outros autores e explique as implicações.
+
+  \section{Apresentação dos Resultados}
+  \label{sec:apresentacao_resultados}
+  Organize seus resultados de forma clara, utilizando textos, tabelas e gráficos.
+
+  \section{Discussão dos Resultados}
+  \label{sec:discussao_resultados}
+  Analise e interprete os resultados, relacionando-os com os objetivos e a revisão bibliográfica.
+
+  \chapter{Conclusão}
+  \label{sec:conclusao}
+  Responda aos objetivos do seu trabalho, apresente as principais conclusões, as limitações da pesquisa e as sugestões para futuras pesquisas.
+
+  \section{Considerações Finais}
+  \label{sec:consideracoes_finais}
+  Um resumo das principais descobertas e a relevância do seu trabalho.
+
+  \section{Sugestões para Futuras Pesquisas}
+  \label{sec:sugestoes}
+  Indique caminhos que podem ser explorados por outros pesquisadores a partir do seu trabalho.
+
+\bibliographystyle{abntex2-alf} % Estilo de bibliografia ABNT (alfabético)
+\bibliography{referencias} % Onde 'referencias' é o nome do seu arquivo .bib (ex: referencias.bib)
+
+\postextual
+  \appendix
+  \chapter{Apêndice A - Título do Apêndice}
+  \label{apx:primeiro_apendice}
+  Aqui você pode incluir materiais complementares que não são essenciais para o entendimento do texto, mas que enriquecem a pesquisa (ex: questionários, roteiros de entrevista).
+
+  \chapter{Apêndice B - Título do Segundo Apêndice}
+  \label{apx:segundo_apendice}
+  Mais um exemplo de apêndice.
+
+  \clearpage % Garante que os anexos comecem em uma nova página
+  \anexos
+  \chapter{Anexo A - Título do Anexo}
+  \label{anx:primeiro_anexo}
+  Anexos são documentos elaborados por outras pessoas ou instituições que foram utilizados na pesquisa (ex: termos de consentimento, licenças de software).
+
+\end{document}
